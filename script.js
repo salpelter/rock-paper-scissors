@@ -25,7 +25,6 @@ function getComputerChoice() {
 function getPlayerChoice() {
     while (true) {
         playerSelection = prompt("Rock, Paper or Scissors?");
-        console.log(playerSelection);
 
         if (playerSelection == null) {
             alert("Canceled");
@@ -36,7 +35,6 @@ function getPlayerChoice() {
             continue;
         }
         else {
-            console.log(playerSelection);
             return playerSelection;
         }
     }
@@ -85,7 +83,6 @@ function doesPlayerWin() {
 function playRound() {
     
     if (getPlayerChoice() === -1) {
-        console.log(playerSelection);
         return -1;
     }
 
