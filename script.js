@@ -43,7 +43,7 @@ function validatePlayerChoice() {
     }
 }
 
-function doesPlayerWin(playerSelection, computerSelection) {
+function doesPlayerWin() {
     if (computerSelection === rock) {
         switch (playerSelection) {
             case rock:
@@ -93,7 +93,7 @@ function playRound() {
 
     computerSelection = getComputerChoice();
 
-    let playerWon = doesPlayerWin(playerSelection, computerSelection);
+    let playerWon = doesPlayerWin();
 
     if (playerWon === true) {
         playerScore++;
