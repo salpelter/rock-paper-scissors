@@ -118,12 +118,21 @@ function playRound() {
 }
 
 function game() {
-    while (playerScore + computerScore < 5) {
+    while (playerScore != 3 && computerScore != 3) {
         if (playRound() == -1) {
             return;
         }
 
-        alert(`Current score is: ${playerScore} - ${computerScore}`);
+        if (playerSelection != computerSelection) {
+            alert(`Current score is: ${playerScore} - ${computerScore}`);
+        }
+
+        if (playerScore == 3) {
+            alert("Congratulations! 🙌 You won.");
+        }
+        else if (computerScore == 3) {
+            alert("Sorry! 🤖 Computer won this time.")
+        }
     }
 
     playerScore = 0;
