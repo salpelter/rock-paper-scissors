@@ -30,12 +30,17 @@ function getPlayerChoice() {
             alert("Canceled");
             return -1;
         }
-        else if (playerSelection != rock && playerSelection != paper && playerSelection != scissors) {
-            alert("You've entered something wrong. Try again!");
-            continue;
-        }
         else {
-            return playerSelection;
+            playerSelection = playerSelection.toLowerCase();
+            
+            // this is the way it is in order to avoid TypeError: toLowerCase() possibly accessing a null variable
+            if (playerSelection != rock && playerSelection != paper && playerSelection != scissors) {
+                alert("You've entered something wrong. Try again!");
+                continue;
+            }
+            else {
+                return playerSelection;
+            }
         }
     }
 
