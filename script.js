@@ -23,24 +23,24 @@ function getComputerChoice() {
 }
 
 function getPlayerChoice() {
-    playerSelection = prompt("Rock, Paper or Scissors?");
-    
-    validatePlayerChoice();
-
-    return playerSelection;
-}
-
-function validatePlayerChoice() {
     while (true) {
-        if (playerSelection !== rock && playerSelection !== paper && playerSelection !== scissors) {
+        playerSelection = prompt("Rock, Paper or Scissors?");
+        console.log(playerSelection);
+
+        if (playerSelection == null) {
+            alert("Canceled");
+            return -1;
+        }
+        else if (playerSelection != rock && playerSelection != paper && playerSelection != scissors) {
             alert("You've entered something wrong. Try again!");
-            playerSelection = prompt("Rock, Paper or Scissors?");
+            continue;
         }
         else {
-            playerSelection = playerSelection.toLowerCase();
-            break;
+            console.log(playerSelection);
+            return playerSelection;
         }
     }
+
 }
 
 function doesPlayerWin() {
@@ -83,11 +83,9 @@ function doesPlayerWin() {
 }
 
 function playRound() {
-    playerSelection = getPlayerChoice();
-    console.log(playerSelection);
-
-    if (playerSelection == null) {
-        alert("Canceled");
+    
+    if (getPlayerChoice() === -1) {
+        console.log(playerSelection);
         return -1;
     }
 
